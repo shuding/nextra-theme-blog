@@ -1,1 +1,1 @@
-module.exports = require('./dist/tag-name')
+module.exports = require('./dist/tag-name').default

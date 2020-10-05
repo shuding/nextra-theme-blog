@@ -111,6 +111,8 @@ export default (opts, _config) => {
           if (!tags.includes(tagName)) {
             return null
           }
+        } else if (type === 'tag') {
+          return null
         }
 
         const postTitle = (post.frontMatter ? post.frontMatter.title : null) || post.name

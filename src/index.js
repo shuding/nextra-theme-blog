@@ -7,7 +7,6 @@ import { useRouter } from 'next/router'
 import Meta from './meta'
 import Nav from './nav'
 import MDXTheme from './mdx-theme'
-import { TagNameProvider } from './tag-name'
 
 import traverse from './utils/traverse'
 import getTitle from './utils/get-title'
@@ -101,7 +100,7 @@ export default (opts, _config) => {
     const [titleNode] = getTitle(props.children)
     const title = opts.meta.title || (
       typeof tagName === 'undefined' ? null :
-      titleNode ? ReactDOMServer.renderToStaticMarkup(<TagNameProvider value={tagName}>{titleNode.props.children}</TagNameProvider>) : null
+      titleNode ? ReactDOMServer.renderToStaticMarkup(titleNode.props.children) : null
     ) || ''
 
     const postList = posts ? <ul>{
@@ -129,7 +128,7 @@ export default (opts, _config) => {
       })
     }</ul> : null
 
-    return <TagNameProvider value={tagName}>
+    return (
       <Layout
         config={config}
         postList={postList}
@@ -139,6 +138,6 @@ export default (opts, _config) => {
         {...opts}
         {...props}
       />
-    </TagNameProvider>
+    )
   }
 }

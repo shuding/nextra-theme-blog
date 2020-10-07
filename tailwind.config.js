@@ -1,4 +1,8 @@
 module.exports = {
+  purge: [
+    './src/**/*.js',
+    './src/**/*.css',
+  ],
   theme: {
     typography: {
       default: {

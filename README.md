@@ -1,7 +1,3 @@
-# nextra-theme-blog
+Made https://github.com/shuding/nextra/tree/core a monorepo.
 
-A blog site theme for [Nextra](https://github.com/shuding/nextra).
-
-## Example
-
-[site-icp9uk8zq.vercel.app](https://site-icp9uk8zq.vercel.app)
+This repository is now archived.
